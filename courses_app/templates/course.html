@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <a href="/" class="button" id="home">Home</a>
+
+    <div id="course_wrapper">
+
+        <div id="course_info">
+            <h1>{{this_course.name}}</h1>
+
+            <h3>Description:</h3>
+            <p id="p_description">{{this_course.description.description}}</p>
+            
+            <div id="comment_section">
+                <p>Course Comments:</p>
+                {% for comment in this_course.comments.all %}
+                <p class="comment">{{comment.comment}} | {{comment.created_at}}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="add_comment">
+            <form action="/{{this_course.id}}/comment" method="POST">
+                {% csrf_token %}
+
+                    <label id="comment_label" for="comment">Add a New Comment</label>
+                    <textarea name="comment" id="" cols="20" rows="5"></textarea>
+
+                <input type="submit" value="Add Comment" class="button">
+            </form>
+        </div>
+    </div>
+</body>

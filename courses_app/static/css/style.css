@@ -1,0 +1,147 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px solid red; */
+}
+
+/* index.html */
+
+a:visited {
+    color: blue;
+}
+
+#wrapper {
+    width: 970px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #efefef;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#add_course {
+    width: 27%;
+    margin-right: 10px;
+    outline: 1px solid black;
+    padding: 10px;
+    max-height: 140px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.form_field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 5px;
+}
+
+#courses_table {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+th, td {
+    outline: 1px solid black;
+    padding: 5px;
+    min-width: 100px;
+    max-width: 150px;
+}
+
+/* course.html */
+
+#home {
+    margin: 20px 20px 10px;
+}
+
+#course_wrapper {
+    width: 970px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #efefef;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#p_description {
+    border-bottom: 1px solid black;
+    margin: 5px 0px 15px;
+    padding: 5px 5px 10px;
+}
+
+.comment {
+    margin: 5px 0px 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+#add_comment form {
+    /* outline: 1px solid blue; */
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    padding: 20px;
+}
+
+#comment_label {
+    padding: 15px;
+    /* outline: 1px solid red; */
+}
+
+textarea {
+    margin: 15px 0px;
+}
+
+#add_comment form input {
+    display: block;
+    margin: 0px auto;
+}
+
+/* delete.html */
+
+#delete_wrapper {
+    width: 970px;
+    background-color: #efefef;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#copy {
+    text-align: left;
+    width: 30%;
+    margin: auto;
+    outline: 1px solid black;
+    padding: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#no {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 8px;
+    margin: 15px 10px 0px 0px;
+    border-radius: 6px;
+}
+
+#yes {
+    padding: 8px;
+    margin-top: 15px;
+    color: white;
+    background-color: red;
+}

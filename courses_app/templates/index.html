@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="add_course">
+            <h1>Add a New Course</h1>
+
+            <form action="add" method="POST">
+                {% csrf_token %}
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div class="form_field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="form_field">
+                    <label for="description">Description</label>
+                    <input type="text" name="description">
+                </div>
+
+                <input type="submit" value="Add Course" class="button">
+            </form>
+        </div>
+
+        <div id="courses_table">
+            <table>
+                <thead>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    {% for course in all_courses %}
+                    <tr>
+                        <td>{{course.name}}</td>
+                        <td>{{course.description.description}}</td>
+                        <td>{{course.created_at|date:"M d, Y"}}</td>
+                        
+                        <!-- Actions -->
+                        <td>
+                            <a href="/{{course.id}}">View</a> | <a href="/{{course.id}}/destroy">Remove</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
